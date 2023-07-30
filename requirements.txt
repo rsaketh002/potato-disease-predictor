@@ -5,4 +5,4 @@ pillow
 tensorflow-serving-api==2.13.0
 matplotlib
 numpy
-export CUDA_VISIBLE_DEVICES=""
+
