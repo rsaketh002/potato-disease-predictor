@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classifier</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+  <div id="cont">
+    <h1>Potato Disease Identifier</h1>
+    <br>
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <p><input type="file" name="file" id="file"></p> 
+        <br>
+        <p> <input type="submit" value="Submit"></p>
+    </form>
+    <h2>Prediction</h2>
+    <div id="output">
+        <div >Class: <span id="predicted_class"></span></div>
+        <br>
+        <div id="conf">Confidence: <span id="confidence"></span></div>
+    </div>
+    <!-- Display the uploaded image -->
+    <div class="image-container">
+        <img id="input_image" src="/static/images/potatodefault.png" alt="Input Image">
+    </div>
+  </div>
+   
+    <script>
+        document.querySelector("form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById("file");
+            const formData = new FormData();
+            formData.append("file", fileInput.files[0]);
+
+            const response = await fetch("/predict", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+            document.getElementById("predicted_class").innerText = data.class;
+            document.getElementById("confidence").innerText = data.confidence*100;
+
+            // Set the input image src attribute to the uploaded image
+            const inputImage = document.getElementById("input_image");
+            inputImage.src = URL.createObjectURL(fileInput.files[0]);
+        });
+    </script>
+</body>
+</html>

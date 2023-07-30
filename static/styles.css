@@ -1,0 +1,63 @@
+/* Set background image for the body */
+body {
+    background-image: url('/static/images/Background.jpg');
+}
+
+/* Style the container for the image and prediction */
+.image-container {
+    text-align: center;
+    margin-top: 30px ;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Style the uploaded image */
+.image-container img {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 10px auto;
+    align-items: center;
+    display: block;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(90, 88, 88, 0.1);
+}
+
+/* Style the prediction results */
+#predicted_class,#confidence{
+    font-weight: bold;
+    font-size: 25px;
+    color: #ff6600;
+}
+#predicted_class{
+    margin-right: 200px;
+}
+#cont{
+    margin-left: 30%;
+}
+h1{
+    font-size: 40px;
+    font-style: italic;
+    margin-left: 30px;
+}
+h2{
+    margin-left: 15%;
+    font-family: 'Courier New', Courier, monospace;
+    color: #20160f;
+
+}
+#output {
+    display: inline-flex;
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+}
+input[type="file"],input[type="submit"] {
+    /* Set the font-size to 0 to hide the text */
+    font-size: 20px;
+    /* Set the line-height to 0 to remove the vertical space */
+    line-height: 0;
+    
+}
