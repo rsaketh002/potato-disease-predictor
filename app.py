@@ -38,6 +38,6 @@ def predict():
     image_base64 = base64.b64encode(file.read()).decode("utf-8")
 
     return jsonify({'class': predicted_class, 'confidence': confidence, 'image': image_base64})
-if __name__ == "main":
-    app.run(host='localhost', port=8000)
+if __name__ == "__main__":
+    app.run()
 
