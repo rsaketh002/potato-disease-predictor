@@ -1,9 +1,8 @@
-
-tensorflow
+tensorflow==2.13.0
 flask
 python-multipart
 pillow
-tensorflow-serving-api
+tensorflow-serving-api==2.13.0
 matplotlib
 numpy
 
