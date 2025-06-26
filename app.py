@@ -9,7 +9,7 @@ app = Flask(__name__, static_url_path='/static')
 @app.route("/")
 def index():
     return render_template("index.html")
-MODEL = tf.keras.models.load_model("./savedmodels/1")
+MODEL = tf.keras.models.load_model("./potatoes.h5", compile=False)
 
 CLASS_NAMES = ["Early Blight", "Late Blight", "Healthy"]
 
@@ -40,4 +40,3 @@ def predict():
     return jsonify({'class': predicted_class, 'confidence': confidence, 'image': image_base64})
 if __name__ == "__main__":
     app.run()
-
