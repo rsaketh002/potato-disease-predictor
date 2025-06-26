@@ -1,4 +1,4 @@
-unicorn
+uvicorn
 Flask
 numpy
 matplotlib
